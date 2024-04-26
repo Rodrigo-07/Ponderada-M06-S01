@@ -1,0 +1,6 @@
+source;share/TurtleDraw/hook/pythonpath.ps1
+source;share/TurtleDraw/hook/pythonpath.dsv
+source;share/TurtleDraw/hook/pythonpath.sh
+source;share/TurtleDraw/hook/ament_prefix_path.ps1
+source;share/TurtleDraw/hook/ament_prefix_path.dsv
+source;share/TurtleDraw/hook/ament_prefix_path.sh

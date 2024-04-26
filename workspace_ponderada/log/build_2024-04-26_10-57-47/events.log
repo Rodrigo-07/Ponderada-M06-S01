@@ -1,0 +1,59 @@
+[0.000000] (-) TimerEvent: {}
+[0.000164] (TurtleDraw) JobQueued: {'identifier': 'TurtleDraw', 'dependencies': OrderedDict()}
+[0.000190] (TurtleDraw) JobStarted: {'identifier': 'TurtleDraw'}
+[0.099275] (-) TimerEvent: {}
+[0.199540] (-) TimerEvent: {}
+[0.299806] (-) TimerEvent: {}
+[0.400046] (-) TimerEvent: {}
+[0.500336] (-) TimerEvent: {}
+[0.600708] (-) TimerEvent: {}
+[0.701255] (-) TimerEvent: {}
+[0.801796] (-) TimerEvent: {}
+[0.902355] (-) TimerEvent: {}
+[1.002858] (-) TimerEvent: {}
+[1.103393] (-) TimerEvent: {}
+[1.203917] (-) TimerEvent: {}
+[1.304509] (-) TimerEvent: {}
+[1.405067] (-) TimerEvent: {}
+[1.505703] (-) TimerEvent: {}
+[1.606173] (-) TimerEvent: {}
+[1.706627] (-) TimerEvent: {}
+[1.807165] (-) TimerEvent: {}
+[1.845647] (TurtleDraw) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/TurtleDraw', 'build', '--build-base', '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build', 'install', '--record', '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/src/TurtleDraw', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rodrigo-07', 'LC_TIME': 'pt_BR.UTF-8', 'SSH_AGENT_PID': '39121', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/rodrigo-07', 'OLDPWD': '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/src/TurtleDraw', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'pt_BR.UTF-8', 'LC_CTYPE': 'pt_BR.UTF-8', 'SYSTEMD_EXEC_PID': '2656', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'rodrigo-07', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'rodrigo-07', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/rodrigo07-pc:@/tmp/.ICE-unix/2319,unix/rodrigo07-pc:/tmp/.ICE-unix/2319', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'pt_BR.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1c8125eb_4bd0_4deb_bcb0_34f81c37ab4e', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'pt_BR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.VD4XM2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.135', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/tmp/ssh-XXXXXXbXQlVu/agent.39120', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'pt_BR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'pt_BR.UTF-8', 'LC_IDENTIFICATION': 'pt_BR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/prefix_override:/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'pt_BR.UTF-8', 'LC_PAPER': 'pt_BR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[1.907327] (-) TimerEvent: {}
+[2.007664] (-) TimerEvent: {}
+[2.013893] (TurtleDraw) StdoutLine: {'line': b'running egg_info\n'}
+[2.014243] (TurtleDraw) StdoutLine: {'line': b'creating ../../build/TurtleDraw/TurtleDraw.egg-info\n'}
+[2.014342] (TurtleDraw) StdoutLine: {'line': b'writing ../../build/TurtleDraw/TurtleDraw.egg-info/PKG-INFO\n'}
+[2.014506] (TurtleDraw) StdoutLine: {'line': b'writing dependency_links to ../../build/TurtleDraw/TurtleDraw.egg-info/dependency_links.txt\n'}
+[2.014624] (TurtleDraw) StdoutLine: {'line': b'writing entry points to ../../build/TurtleDraw/TurtleDraw.egg-info/entry_points.txt\n'}
+[2.014670] (TurtleDraw) StdoutLine: {'line': b'writing requirements to ../../build/TurtleDraw/TurtleDraw.egg-info/requires.txt\n'}
+[2.014721] (TurtleDraw) StdoutLine: {'line': b'writing top-level names to ../../build/TurtleDraw/TurtleDraw.egg-info/top_level.txt\n'}
+[2.014791] (TurtleDraw) StdoutLine: {'line': b"writing manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'\n"}
+[2.015727] (TurtleDraw) StdoutLine: {'line': b"reading manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'\n"}
+[2.016311] (TurtleDraw) StdoutLine: {'line': b"writing manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'\n"}
+[2.016371] (TurtleDraw) StdoutLine: {'line': b'running build\n'}
+[2.016425] (TurtleDraw) StdoutLine: {'line': b'running build_py\n'}
+[2.016486] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build\n'}
+[2.016548] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib\n'}
+[2.016605] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw\n'}
+[2.016658] (TurtleDraw) StdoutLine: {'line': b'copying TurtleDraw/__init__.py -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw\n'}
+[2.016699] (TurtleDraw) StdoutLine: {'line': b'running install\n'}
+[2.016865] (TurtleDraw) StdoutLine: {'line': b'running install_lib\n'}
+[2.017299] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw\n'}
+[2.017357] (TurtleDraw) StdoutLine: {'line': b'copying /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw/__init__.py -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw\n'}
+[2.017627] (TurtleDraw) StdoutLine: {'line': b'byte-compiling /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw/__init__.py to __init__.cpython-310.pyc\n'}
+[2.017803] (TurtleDraw) StdoutLine: {'line': b'running install_data\n'}
+[2.017870] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index\n'}
+[2.017948] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index\n'}
+[2.017994] (TurtleDraw) StdoutLine: {'line': b'creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index/packages\n'}
+[2.018063] (TurtleDraw) StdoutLine: {'line': b'copying resource/TurtleDraw -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index/packages\n'}
+[2.018105] (TurtleDraw) StdoutLine: {'line': b'copying package.xml -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/TurtleDraw\n'}
+[2.018146] (TurtleDraw) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.019287] (TurtleDraw) StdoutLine: {'line': b'Copying ../../build/TurtleDraw/TurtleDraw.egg-info to /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw-0.0.0-py3.10.egg-info\n'}
+[2.019711] (TurtleDraw) StdoutLine: {'line': b'running install_scripts\n'}
+[2.033584] (TurtleDraw) StdoutLine: {'line': b"writing list of installed files to '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/install.log'\n"}
+[2.052516] (TurtleDraw) CommandEnded: {'returncode': 0}
+[2.107814] (-) TimerEvent: {}
+[2.146784] (TurtleDraw) JobEnded: {'identifier': 'TurtleDraw', 'rc': 0}
+[2.148077] (-) EventReactorShutdown: {}

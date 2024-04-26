@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/TurtleDraw/TurtleDraw.egg-info
+writing ../../build/TurtleDraw/TurtleDraw.egg-info/PKG-INFO
+writing dependency_links to ../../build/TurtleDraw/TurtleDraw.egg-info/dependency_links.txt
+writing entry points to ../../build/TurtleDraw/TurtleDraw.egg-info/entry_points.txt
+writing requirements to ../../build/TurtleDraw/TurtleDraw.egg-info/requires.txt
+writing top-level names to ../../build/TurtleDraw/TurtleDraw.egg-info/top_level.txt
+writing manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'
+reading manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'
+writing manifest file '../../build/TurtleDraw/TurtleDraw.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw
+copying TurtleDraw/__init__.py -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw
+running install
+running install_lib
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw
+copying /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/build/lib/TurtleDraw/__init__.py -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw
+byte-compiling /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index
+creating /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index/packages
+copying resource/TurtleDraw -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/share/TurtleDraw
+running install_egg_info
+Copying ../../build/TurtleDraw/TurtleDraw.egg-info to /home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/install/TurtleDraw/lib/python3.10/site-packages/TurtleDraw-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/rodrigo-07/Github/Ponderada-M06-S01/workspace_ponderada/build/TurtleDraw/install.log'
