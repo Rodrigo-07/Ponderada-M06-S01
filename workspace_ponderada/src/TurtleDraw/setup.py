@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'move_turtle = TurtleDraw.move_turtle:main',
             'draw_turtle = TurtleDraw.draw:main',
+            'draw_turtle_image = TurtleDraw.draw_image_turtles:main',
         ],
     },
 )
