@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'move_turtle = TurtleDraw.move_turtle:main',
+            'draw_turtle = TurtleDraw.draw:main',
         ],
     },
 )
