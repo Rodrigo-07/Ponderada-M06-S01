@@ -10,6 +10,7 @@ setup.py
 ../../build/TurtleDraw/TurtleDraw.egg-info/zip-safe
 TurtleDraw/__init__.py
 TurtleDraw/draw.py
+TurtleDraw/draw_image.py
 TurtleDraw/draw_image_turtles.py
 TurtleDraw/image_processing.py
 TurtleDraw/move_turtle.py
