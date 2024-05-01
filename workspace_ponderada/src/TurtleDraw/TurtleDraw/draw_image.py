@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-from turtlesim.srv import Spawn
+from turtlesim.srv import Spawn, Kill, SetPen
 from turtlesim.msg import Pose
 
 import random
@@ -30,6 +30,12 @@ class DrawTurtleImage(Node):
 
         # Criar um publisher
         self.position_publisher= self.create_publisher(msg_type=Twist, topic='/turtleDesigner/cmd_vel', qos_profile=10)
+
+        # Criar um cliente para o serviço de kill
+        self.kill_client = self.create_client(Kill, '/kill')
+
+        # Matar a tartaruga padrão
+        self.kill_turtle('turtle1')
 
         # Subscrever no tópico de pegar a posição da tartaruga
         self.pose_subscription = self.create_subscription(Pose, '/turtleDesigner/pose', self.pose_callback, 10)
@@ -153,7 +159,19 @@ class DrawTurtleImage(Node):
         try:
             response = future.result()
         except Exception as e:
-            self.get_logger().error('Erro ao espalnar: %r' % (e,))
+            self.get_logger().error('Erro a dar spaw na tartaruga {name}: %r' % (e,))
+    
+    def kill_turtle(self, name):
+        kill_info = Kill.Request()
+        kill_info.name = name
+
+        future = self.kill_client.call_async(kill_info)
+        rclpy.spin_until_future_complete(self, future)
+
+        try:
+            response = future.result()
+        except Exception as e:
+            self.get_logger().error('Erro ao matar a tartaruga {name}: %r' % (e,))
             
 
 def main(args=None):
