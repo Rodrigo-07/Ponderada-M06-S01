@@ -2,44 +2,67 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def process_image(image_path):
-    # Carregar imagem em escala de cinza
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-
-    image = cv2.resize(image, (500, 500))
-    
-    if image is None:
+    # Carregar imagem
+    img = cv2.imread(image_path)
+    if img is None:
         raise Exception(f"Não foi possível carregar a imagem em {image_path}. Verifique o caminho e as permissões do arquivo.")
     
-    # Aplicar limiarização para torná-la binária
-    _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY_INV)
+    img = cv2.resize(img, (500, 500))
     
+    # Converter para escala de cinza
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Aplicar suavização Gaussiana
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+
+    # Detecção de bordas Canny
+    edges = cv2.Canny(blurred, 50, 150)
+
+    # Aplicar fechamento morfológico
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+    closed_edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
+
     # Encontrar contornos
-    contours, _ = cv2.findContours(binary_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    
+    contours, _ = cv2.findContours(closed_edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Preparar a imagem para desenhar os contornos
+    result = img.copy()
+
     scaled_contours = []
 
-    # Loop through the list of contours
+    # Filtrar e desenhar contornos baseados em seu perímetro
     for contour in contours:
-        # Convert contour array to numpy array for easy slicing
-        # and separate x and y coordinates
-        contour = np.array(contour)
-        xs = contour[:, 0, 0]
-        ys = contour[:, 0, 1]
+        if cv2.contourArea(contour) > 100:  # Filtrar contornos pequenos
+            perimeter = cv2.arcLength(contour, True)
 
-        # Normalize the coordinates to a 0-10 scale
-        xs = 10 * (xs - min(xs)) / (max(xs) - min(xs))
-        ys = 10 * (ys - min(ys)) / (max(ys) - min(ys))
+            contour = np.array(contour)
+            xs = contour[:, 0, 0]
+            ys = contour[:, 0, 1]
 
-        # Append the scaled coordinates to the list
-        scaled_contours.append(np.column_stack((xs, ys)))
+            # Normalize the coordinates to a 0-10 scale
+            xs = 11 * (xs - min(xs)) / (max(xs) - min(xs))
+            ys = 11 * (ys - min(ys)) / (max(ys) - min(ys))
+
+            # Append the scaled coordinates to the list
+            scaled_contours.append(np.column_stack((xs, ys)))
+
+            if perimeter > 500:
+                # Desenhar contornos na imagem resultante
+                cv2.drawContours(result, [contour], -1, (0, 255, 0), 2)
+
+    # Salvar e mostrar os resultados
+    cv2.imwrite("processed_image.jpg", result)
+    cv2.imshow("Original", img)
+    cv2.imshow("Edges", edges)
+    cv2.imshow("Result with Contours", result)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
     return scaled_contours
 
-
 # Ajuste o caminho para sua imagem
-contours = process_image('star.jpeg')
+contours = process_image('/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/charmander.png')
 
 print(contours)
 
