@@ -19,8 +19,15 @@ class DrawTurtleImage(Node):
         # Inicializar o Node
         super().__init__('draw_turtle_image')
 
+        self.declare_parameter('image_path', '-')
+
+        # Obter o valor do parâmetro
+        image_path_param = self.get_parameter('image_path').get_parameter_value().string_value
+        
+        print(image_path_param)
+
         # Carregar os contornos da imagem
-        self.image_contours = self.process_image('/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/star.jpeg')
+        self.image_contours = self.process_image(image_path_param)
 
         # Criar um cliente para o serviço de spawn
         self.spawn_client = self.create_client(Spawn, '/spawn')
@@ -33,6 +40,12 @@ class DrawTurtleImage(Node):
 
         # Criar um cliente para o serviço de kill
         self.kill_client = self.create_client(Kill, '/kill')
+
+        # Criar um cliente para o serviço de set_pen
+        self.set_pen_client = self.create_client(SetPen, '/turtleDesigner/set_pen')
+
+        # Setar a cor da caneta da tartaruga
+        self.set_pen_turtle(0, 0, 0, 2, 0)
 
         # Matar a tartaruga padrão
         self.kill_turtle('turtle1')
@@ -88,7 +101,7 @@ class DrawTurtleImage(Node):
         while abs(angle - self.turtle_position.theta) > 0.1:
             msg = Twist()
             # print(angle - self.turtle_position.theta)
-            msg.angular.z = 0.5 if angle > self.turtle_position.theta else -0.5
+            msg.angular.z = 1.0 if angle > self.turtle_position.theta else -1.0
             self.position_publisher.publish(msg)
             rclpy.spin_once(self)
         
@@ -96,7 +109,7 @@ class DrawTurtleImage(Node):
         msg = Twist()
         msg.angular.z = 0.0 # Parar de girar
         while abs(x - self.turtle_position.x) > 0.1 or abs(y - self.turtle_position.y) > 0.1:
-            msg.linear.x = 0.5
+            msg.linear.x = 1.0
             self.position_publisher.publish(msg)
             rclpy.spin_once(self)
 
@@ -134,8 +147,8 @@ class DrawTurtleImage(Node):
             ys = contour[:, 0, 1]
 
             # Normalize the coordinates to a 0-10 scale
-            xs = 10 * (xs - min(xs)) / (max(xs) - min(xs))
-            ys = 10 * (ys - min(ys)) / (max(ys) - min(ys))
+            xs = 11 * (xs - min(xs)) / (max(xs) - min(xs))
+            ys = 11 * (ys - min(ys)) / (max(ys) - min(ys))
 
             # Append the scaled coordinates to the list
             scaled_contours.append(np.column_stack((xs, ys)))
@@ -172,6 +185,22 @@ class DrawTurtleImage(Node):
             response = future.result()
         except Exception as e:
             self.get_logger().error('Erro ao matar a tartaruga {name}: %r' % (e,))
+
+    def set_pen_turtle(self, r, g, b, width, off):
+        set_pen_info = SetPen.Request()
+        set_pen_info.r = r
+        set_pen_info.g = g
+        set_pen_info.b = b
+        set_pen_info.width = width
+        set_pen_info.off = off
+
+        future = self.set_pen_client.call_async(set_pen_info)
+        rclpy.spin_until_future_complete(self, future)
+
+        try:
+            response = future.result()
+        except Exception as e:
+            self.get_logger().error('Erro ao setar as configurações da caneta da tartaruga: %r' % (e,))
             
 
 def main(args=None):
