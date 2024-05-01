@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def process_image(image_path):
     # Carregar imagem em escala de cinza
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)

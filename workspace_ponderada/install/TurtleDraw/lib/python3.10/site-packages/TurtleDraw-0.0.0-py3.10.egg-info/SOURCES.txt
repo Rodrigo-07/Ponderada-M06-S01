@@ -11,8 +11,8 @@ setup.py
 TurtleDraw/__init__.py
 TurtleDraw/draw.py
 TurtleDraw/draw_image_turtles.py
+TurtleDraw/image_processing.py
 TurtleDraw/move_turtle.py
-TurtleDraw/teste.py
 resource/TurtleDraw
 test/test_copyright.py
 test/test_flake8.py
