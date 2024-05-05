@@ -9,8 +9,6 @@ from geometry_msgs.msg import Twist
 from turtlesim.srv import Spawn, Kill, SetPen
 from turtlesim.msg import Pose
 
-import random
-import string
 
 class DrawTurtleImage(Node):
 
@@ -80,10 +78,6 @@ class DrawTurtleImage(Node):
 
 
     def go_to_position(self, x, y):
-        # Preciso pegar a posição atual da tarturuga
-        # Calcular o angulo entre a posição atual e a posição desejada
-        # Girar ela na direção correta
-        # Mover ela para a posição desejada
 
         # Esperar a posição inicial da tartaruga
         while not self.position_received:
@@ -103,7 +97,7 @@ class DrawTurtleImage(Node):
             # print(angle - self.turtle_position.theta)
             msg.angular.z = 1.0 if angle > self.turtle_position.theta else -1.0
             self.position_publisher.publish(msg)
-            rclpy.spin_once(self)
+            rclpy.spin_once(self) # Rodar o spin_once para atualizar a posição da tartaruga
         
         # Mover ela para a posição desejada
         msg = Twist()
@@ -111,7 +105,7 @@ class DrawTurtleImage(Node):
         while abs(x - self.turtle_position.x) > 0.1 or abs(y - self.turtle_position.y) > 0.1:
             msg.linear.x = 1.0
             self.position_publisher.publish(msg)
-            rclpy.spin_once(self)
+            rclpy.spin_once(self) 
 
         # Parar a tartaruga
         msg = Twist()
@@ -175,8 +169,10 @@ class DrawTurtleImage(Node):
 
         return scaled_contours
     
+    # Função para spawnar a tartaruga
     def spawn_turtle(self, x, y, theta, name):
-
+        
+        # Criar um objeto do tipo Spawn.Request()
         spawn_info = Spawn.Request()
         spawn_info.x = x
         spawn_info.y = y
@@ -184,27 +180,35 @@ class DrawTurtleImage(Node):
 
         spawn_info.name = name
 
+        # Chamar o serviço de spawn
         future = self.spawn_client.call_async(spawn_info)
+        # Esperar a resposta do serviço
         rclpy.spin_until_future_complete(self, future)
 
         try:
+            # Obter a resposta do serviço
             response = future.result()
         except Exception as e:
             self.get_logger().error('Erro a dar spaw na tartaruga {name}: %r' % (e,))
     
+    # Função para matar a tartaruga
     def kill_turtle(self, name):
+        # Criar um objeto do tipo Kill.Request()
         kill_info = Kill.Request()
         kill_info.name = name
 
+        # Chamar o serviço de kill
         future = self.kill_client.call_async(kill_info)
-        rclpy.spin_until_future_complete(self, future)
+        rclpy.spin_until_future_complete(self, future) # Esperar a resposta do serviço
 
         try:
-            response = future.result()
+            response = future.result() # Obter a resposta do serviço
         except Exception as e:
             self.get_logger().error('Erro ao matar a tartaruga {name}: %r' % (e,))
 
+    # Função para setar a cor da caneta da tartaruga
     def set_pen_turtle(self, r, g, b, width, off):
+        # Criar um objeto do tipo SetPen.Request()
         set_pen_info = SetPen.Request()
         set_pen_info.r = r
         set_pen_info.g = g
@@ -212,11 +216,12 @@ class DrawTurtleImage(Node):
         set_pen_info.width = width
         set_pen_info.off = off
 
+        # Chamar o serviço de set_pen
         future = self.set_pen_client.call_async(set_pen_info)
         rclpy.spin_until_future_complete(self, future)
 
         try:
-            response = future.result()
+            response = future.result() # Obter a resposta do serviço
         except Exception as e:
             self.get_logger().error('Erro ao setar as configurações da caneta da tartaruga: %r' % (e,))
             

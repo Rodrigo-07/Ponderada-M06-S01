@@ -82,6 +82,8 @@ Foi utilziado a biblioteca OpenCV para realizar o pré-processamento da imagem.
 
 Existe algumas considerações e limitações para o sistema de mapeamento da imagem, como imagem com muitos detalhes e complexas, com muitos contornos ou com muitos ruídos podem não ser desenhadas corretamente. Para melhorar o sistema de mapeamento da imagem, é necessário realizar um tratamento de imagem mais avançado e complexo, como por exemplo, a utilização de redes neurais para identificar os contornos da imagem.
 
+Além disso, não foi implementado a funcionalidade da tartaruga não "levantar" o lápis para desenhar a imagem, fazendo com que a tartaruga passe por cima de outros traços.
+
 ## Arquivos do pacote
 
 Dentro do pacote TurtleDraw, temos os seguintimos arquivos executáveis com o ros2:

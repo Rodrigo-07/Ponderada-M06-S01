@@ -33,22 +33,20 @@ def process_image(image_path):
 
     # Filtrar e desenhar contornos baseados em seu perímetro
     for contour in contours:
-        if cv2.contourArea(contour) > 100:  # Filtrar contornos pequenos
+        if cv2.contourArea(contour) > 100:  # Filtrar contornos
             perimeter = cv2.arcLength(contour, True)
 
             contour = np.array(contour)
             xs = contour[:, 0, 0]
             ys = contour[:, 0, 1]
 
-            # Normalize the coordinates to a 0-10 scale
+            # Normalizar os contornos para o range certo
             xs = 11 * (xs - min(xs)) / (max(xs) - min(xs))
             ys = 11 * (ys - min(ys)) / (max(ys) - min(ys))
 
-            # Append the scaled coordinates to the list
             scaled_contours.append(np.column_stack((xs, ys)))
 
             if perimeter > 500:
-                # Desenhar contornos na imagem resultante
                 cv2.drawContours(result, [contour], -1, (0, 255, 0), 2)
 
     # Salvar e mostrar os resultados
@@ -67,35 +65,29 @@ contours = process_image('/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/
 print(contours)
 
 def plot_contours(contours):
-    # Create a figure and a set of subplots
+    # Criar a figura e o eixo
     fig, ax = plt.subplots()
 
-    # Loop through the list of contours
     for contour in contours:
-        # Convert contour array to numpy array for easy slicing
-        # and separate x and y coordinates
+        # Transformar o contorno em um array numpy
         contour = np.array(contour)
         xs = contour[:, 0]
         ys = contour[:, 1]
 
-        # Plot each contour
-        ax.plot(xs, ys, marker='o')  # 'o' can be replaced with other marker types if desired
+        # Plotar os contornos
+        ax.plot(xs, ys, marker='o') 
 
-    # Set plot limits
+    # Definir limites para os eixos
     ax.set_xlim([0, 11])
     ax.set_ylim([0, 11])
     ax.set_aspect('equal', 'box')
 
-    # Label the axes
     ax.set_xlabel('X Position')
     ax.set_ylabel('Y Position')
 
-    # Show grid
     ax.grid(True)
 
-    # Show the plot
     plt.show()
 
-# Assuming 'scaled_contours' is your list of contours from the image processing part
 plot_contours(contours)
 
