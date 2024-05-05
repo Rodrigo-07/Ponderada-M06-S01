@@ -44,7 +44,7 @@ ros2 run turtlesim turtlesim_node
 Em seguida, abra outro terminal e execute o seguinte comando, para fazer o build do package e do setup do pacote:
 
 ```bash
-cd workspace_ponderada/TurtleDraw
+cd workspace_ponderada/src/TurtleDraw
 
 colcon build
 . install/setup.bash
@@ -59,7 +59,8 @@ ros2 run TurtleDraw draw_image --ros-args -p image_path:="caminho_da_imagem"
 Exemplo:
 
 ```bash
-ros2 run TurtleDraw draw_image --ros-args -p image_path:="/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/adiadasLogo.png"
+ros2 run TurtleDraw draw_image --ros-args -p image_path:="/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/twitter.jpeg"
+ros2 run TurtleDraw draw_image --ros-args -p image_path:="/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/star.jpeg"
 ```
 
 ## Resultado
