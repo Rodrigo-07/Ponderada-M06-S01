@@ -137,7 +137,7 @@ class DrawTurtleImage(Node):
         # Detecção de bordas Canny
         edges = cv2.Canny(blurred, 50, 150)
 
-        # Aplicar fechamento morfológico
+        # Aplicar fechamento morfológico que vai servir para fechar os contornos e buracos
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
         closed_edges = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
 
