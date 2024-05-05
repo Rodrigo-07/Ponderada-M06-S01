@@ -92,4 +92,4 @@ Também tem o arquivo `image_processing.py` que foi utilizado como teste para do
 
 ## Resultado
 
-[Link de demonstração do projeto]([https://youtube.com/](https://youtu.be/6QBUj5jXsGg))
+[Link de demonstração do projeto](https://youtu.be/6QBUj5jXsGg)
