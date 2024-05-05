@@ -9,11 +9,10 @@ setup.py
 ../../build/TurtleDraw/TurtleDraw.egg-info/top_level.txt
 ../../build/TurtleDraw/TurtleDraw.egg-info/zip-safe
 TurtleDraw/__init__.py
-TurtleDraw/draw.py
 TurtleDraw/draw_image.py
 TurtleDraw/draw_image_turtles.py
+TurtleDraw/draw_random.py
 TurtleDraw/image_processing.py
-TurtleDraw/move_turtle.py
 resource/TurtleDraw
 test/test_copyright.py
 test/test_flake8.py

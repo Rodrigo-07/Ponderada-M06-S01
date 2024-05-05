@@ -162,9 +162,9 @@ class DrawTurtleImage(Node):
                 # Transformar o contorno gerado pelo openCV em um array 2D
                 contour = np.squeeze(contour)
 
-                # Normalizar as coordenadas de 0 a 1 (dividindo por 500) e depois de 0 a 11 para se adequar ao espaço do turtlesim
-                xs = contour[:, 0] * (11 / 500)
-                ys = contour[:, 1] * (11 / 500)
+                # Normalizar as coordenadas de 0 a 1 (dividindo por 500) e depois de 0 a 10 para se adequar ao espaço do turtlesim
+                xs = contour[:, 0] * (10 / 500)
+                ys = contour[:, 1] * (10 / 500)
 
                 # Inverter o eixo Y 
                 ys = 11 - ys
