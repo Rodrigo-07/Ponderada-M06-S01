@@ -44,7 +44,7 @@ ros2 run turtlesim turtlesim_node
 Em seguida, abra outro terminal e execute o seguinte comando, para fazer o build do package e do setup do pacote:
 
 ```bash
-cd workspace_ponderada/src/TurtleDraw
+cd workspace_ponderada
 
 colcon build
 . install/setup.bash
@@ -62,10 +62,6 @@ Exemplo:
 ros2 run TurtleDraw draw_image --ros-args -p image_path:="/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/twitter.jpeg"
 ros2 run TurtleDraw draw_image --ros-args -p image_path:="/home/rodrigo-07/Github/Ponderada-M06-S01/images_test/star.jpeg"
 ```
-
-## Resultado
-
-[Link de demonstração do projeto](https://youtube.com/)
 
 ## Sistema de mapeamento da imagem
 
@@ -93,3 +89,7 @@ Dentro do pacote TurtleDraw, temos os seguintimos arquivos executáveis com o ro
 - `draw_random.py`: Script que desenha traços aleatórios na tela do turtlesim.
 
 Também tem o arquivo `image_processing.py` que foi utilizado como teste para do sistema de mapeamento da imagem.
+
+## Resultado
+
+[Link de demonstração do projeto]([https://youtube.com/](https://youtu.be/6QBUj5jXsGg))
